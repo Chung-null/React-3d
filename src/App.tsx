@@ -116,18 +116,18 @@ const BabylonScene = () => {
       </Enginee>
       <div className="buttons-container">
         {showImageButtons ? (
-          <><Button className="ant-btn-save" type="primary" onClick={handleSaveClick}>
+          <><Button className="ant-btn-save" type="primary" onClick={handleSaveClick} id='save-data'>
             Save
           </Button>
-            <Button className="ant-btn-back" type="primary" onClick={handleBackClick}>
+            <Button className="ant-btn-back" type="primary" onClick={handleBackClick} id='back-data'>
               Back
             </Button>
-            <Button className="ant-btn-delete" type="primary">
+            <Button className="ant-btn-delete" type="primary" id='delete-data'>
               Delete
             </Button>
           </>
         ) : (
-          <Button className="ant-btn-edit" type="primary" onClick={handleEditClick}>
+          <Button className="ant-btn-edit" type="primary" onClick={handleEditClick} id='edit-data'>
             Edit
           </Button>
         )}

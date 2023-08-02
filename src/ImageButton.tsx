@@ -78,20 +78,20 @@ const ImageButton = () => {
     <>
       <div className="image-buttons">
         {/* Other Image Buttons */}
-        <Button className="ant-btn-image" type="primary" onClick={handleWarehouseClick}>
+        <Button className="ant-btn-image" type="primary" onClick={handleWarehouseClick} id='ButtonWarehouse'>
           <img src={warehouse} alt="Warehouse" title="Warehouse" />
         </Button>
         {/* Shelf Image Button */}
-        <Button className="ant-btn-image" type="primary" onClick={handleShelfClick}>
+        <Button className="ant-btn-image" type="primary" onClick={handleShelfClick} id='ButtonShelfware'>
           <img src={shelf} alt="Shelf" title="Shelf" />
         </Button>
-        <Button className="ant-btn-image" type="primary" onClick={handleBoxClick}>
+        <Button className="ant-btn-image" type="primary" onClick={handleBoxClick} id='ButtonBox'>
           <img src={box} alt="Box" title="Box" />
         </Button>
-        <Button className="ant-btn-image" type="primary" onClick={handlePalletClick}>
+        <Button className="ant-btn-image" type="primary" onClick={handlePalletClick} id='ButtonPallet'>
           <img src={pallet} alt="Pallet" title="Pallet" />
         </Button>
-        <Button className="ant-btn-image" type="primary" onClick={handleConveyorClick}>
+        <Button className="ant-btn-image" type="primary" onClick={handleConveyorClick} id='ButtonConveyor'>
           <img src={conveyor} alt="Conveyor" title="Conveyor" />
         </Button>
       </div>
@@ -112,7 +112,7 @@ const ImageButton = () => {
                   // Các quy tắc khác tùy ý có thể thêm vào đây
                 ]}
               >
-                <Input placeholder="Enter name shelf" />
+                <Input placeholder="Enter name shelf" id='InputNameShelfinfo' />
               </Form.Item>
               <Form.Item label="Size"
                 name="size"
@@ -133,12 +133,12 @@ const ImageButton = () => {
               >
                 <div className="param2-container">
                   <label>Width</label>
-                  <InputNumber placeholder="Enter width shelf" type='number' onKeyPress={handleSizeKeyPress} />
+                  <InputNumber id='num-width-shelf' placeholder="Enter width shelf" type='number' onKeyPress={handleSizeKeyPress} />
                   {/* <input placeholder="Enter width shelf" pattern="[0-9]" type='number' /> */}
                   <label>Height</label>
-                  <InputNumber placeholder="Enter height shelf" type='number' onKeyPress={handleSizeKeyPress} />
+                  <InputNumber id='num-height-shelf' placeholder="Enter height shelf" type='number' onKeyPress={handleSizeKeyPress} />
                   <label>Lenght</label>
-                  <InputNumber placeholder="Enter lenght shelf" type='number' onKeyPress={handleSizeKeyPress} />
+                  <InputNumber id='num-lenght-shelf' placeholder="Enter lenght shelf" type='number' onKeyPress={handleSizeKeyPress} />
                 </div>
               </Form.Item>
               <Form.Item label="Parameters"
@@ -152,11 +152,11 @@ const ImageButton = () => {
               >
                 <div className="param2-container">
                   <label>Column</label>
-                  <InputNumber placeholder="Enter column shelf" type='number' onKeyPress={handleSizeKeyPress} />
+                  <InputNumber id='InputTextColumn' placeholder="Enter column shelf" type='number' onKeyPress={handleSizeKeyPress} />
                   <label>Row</label>
-                  <InputNumber placeholder="Enter row shelf" type='number' onKeyPress={handleSizeKeyPress} />
+                  <InputNumber id='InputTextRow' placeholder="Enter row shelf" type='number' onKeyPress={handleSizeKeyPress} />
                   <label>Depth</label>
-                  <InputNumber placeholder="Enter depth shelf" type='number' onKeyPress={handleSizeKeyPress} />
+                  <InputNumber id='InputTextDepth' placeholder="Enter depth shelf" type='number' onKeyPress={handleSizeKeyPress} />
                 </div>
               </Form.Item>
               {/* Add more Form.Item components for other parameters */}
@@ -167,13 +167,13 @@ const ImageButton = () => {
             <Form layout="vertical">
               <div className="location-container">
                 <label>X:</label>
-                <InputNumber placeholder="" type='number' />
+                <InputNumber id='InputTextX' placeholder="" type='number' />
                 <label>Y:</label>
-                <InputNumber placeholder="" type='number' />
+                <InputNumber id='InputTextY' placeholder="" type='number' />
                 <label>Z:</label>
-                <InputNumber placeholder="" type='number' />
+                <InputNumber id='InputTextZ' placeholder="" type='number' />
                 <label>Rotate:</label>
-                <InputNumber placeholder="" type='number' />
+                <InputNumber id='InputTextRotate' placeholder="" type='number' />
               </div>
               {/* Add more Form.Item components for other parameters */}
             </Form>
@@ -187,11 +187,13 @@ const ImageButton = () => {
             <Form layout="vertical">
               <div className="location-container">
                 <label>X:</label>
-                <InputNumber placeholder="" />
+                <InputNumber id='InputTextX' placeholder="" />
                 <label>Y:</label>
-                <InputNumber placeholder="" />
+                <InputNumber id='InputTextY' placeholder="" />
                 <label>Z:</label>
-                <InputNumber placeholder="" />
+                <InputNumber id='InputTextZ' placeholder="" />
+                <label>Rotate:</label>
+                <InputNumber id='InputTextRotate' placeholder="" type='number' />
               </div>
               {/* Add more Form.Item components for other parameters */}
             </Form>
@@ -228,7 +230,7 @@ const ImageButton = () => {
                   </div>
                   <div className="row-box">
                     <div className="column-box">
-                      <label className="box-form-label"  style={{ fontSize: '13px' }}>BBE/BE</label>
+                      <label className="box-form-label" style={{ fontSize: '13px' }}>BBE/BE</label>
                     </div>
                     <div className="column-box">
                       <Form.Item name="BBE">
@@ -246,7 +248,7 @@ const ImageButton = () => {
                 <div className="form-group box-form-group">
                   <div className="row-box">
                     <div className="column-box">
-                      <label className="box-form-label"  style={{ fontSize: '13px' }}>Length x Width x Height(cm)</label>
+                      <label className="box-form-label" style={{ fontSize: '13px' }}>Length x Width x Height(cm)</label>
                     </div>
                     <div className="column-box">
                       <div className="input-row">
@@ -276,7 +278,7 @@ const ImageButton = () => {
 
               </div>
               <div className="form-group">
-              <div className="rectangle-divider">
+                <div className="rectangle-divider">
                   <h3 className="section-title">Box</h3>
                 </div>
                 <div className="form-group box-form-group">
@@ -329,11 +331,13 @@ const ImageButton = () => {
             <Form layout="vertical">
               <div className="location-container">
                 <label>X:</label>
-                <InputNumber placeholder="" />
+                <InputNumber id='InputTextX' placeholder="" />
                 <label>Y:</label>
-                <InputNumber placeholder="" />
+                <InputNumber id='InputTextY' placeholder="" />
                 <label>Z:</label>
-                <InputNumber placeholder="" />
+                <InputNumber id='InputTextZ' placeholder="" />
+                <label>Rotate:</label>
+                <InputNumber id='InputTextRotate' placeholder="" type='number' />
               </div>
               {/* Add more Form.Item components for other parameters */}
             </Form>
@@ -347,11 +351,13 @@ const ImageButton = () => {
             <Form layout="vertical">
               <div className="location-container">
                 <label>X:</label>
-                <InputNumber placeholder="" />
+                <InputNumber id='InputTextX' placeholder="" />
                 <label>Y:</label>
-                <InputNumber placeholder="" />
+                <InputNumber id='InputTextY' placeholder="" />
                 <label>Z:</label>
-                <InputNumber placeholder="" />
+                <InputNumber id='InputTextZ' placeholder="" />
+                <label>Rotate:</label>
+                <InputNumber id='InputTextRotate' placeholder="" type='number' />
               </div>
               {/* Add more Form.Item components for other parameters */}
             </Form>
@@ -365,11 +371,13 @@ const ImageButton = () => {
             <Form layout="vertical">
               <div className="location-container">
                 <label>X:</label>
-                <InputNumber placeholder="" />
+                <InputNumber id='InputTextX' placeholder="" />
                 <label>Y:</label>
-                <InputNumber placeholder="" />
+                <InputNumber id='InputTextY' placeholder="" />
                 <label>Z:</label>
-                <InputNumber placeholder="" />
+                <InputNumber id='InputTextZ' placeholder="" />
+                <label>Rotate:</label>
+                <InputNumber id='InputTextRotate' placeholder="" type='number' />
               </div>
               {/* Add more Form.Item components for other parameters */}
             </Form>
