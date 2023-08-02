@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Button, Collapse, Form, Input, InputNumber } from 'antd';
+import { Button, Collapse, DatePicker, Form, Input, InputNumber } from 'antd';
 import './App.css';
 import box from "../src/icon/box.png";
 import pallet from "../src/icon/pallet.png";
 import warehouse from "../src/icon/warehouse.png";
 import shelf from "../src/icon/shelf.png";
 import conveyor from "../src/icon/conveyor.png";
+const dateFormat = 'DD/MM/YYYY';
 
 
 
@@ -166,11 +167,11 @@ const ImageButton = () => {
             <Form layout="vertical">
               <div className="location-container">
                 <label>X:</label>
-                <InputNumber placeholder="" type='number'/>
+                <InputNumber placeholder="" type='number' />
                 <label>Y:</label>
                 <InputNumber placeholder="" type='number' />
                 <label>Z:</label>
-                <InputNumber placeholder="" type='number'/>
+                <InputNumber placeholder="" type='number' />
                 <label>Rotate:</label>
                 <InputNumber placeholder="" type='number' />
               </div>
@@ -199,6 +200,130 @@ const ImageButton = () => {
       )}
       {showBoxCollapse && (
         <Collapse className="image-collapse">
+          <Collapse.Panel header={<span className="panel-header">Info Box</span>} key="1">
+            {/* Add your Shelf details content here */}
+            <Form layout="vertical">
+              <div className="form-group">
+                <label className="form-label">Phần trăm hạn sử dụng được phép nhập hàng (%): 55</label>
+                <div className="form-group box-form-group">
+                  <div className="row-box">
+                    <div className="column-box">
+                      <label className="box-form-label" style={{ fontSize: '13px' }}>Expiry date</label>
+                    </div>
+                    <div className="column-box">
+                      <Form.Item name="Expirydate">
+                        <DatePicker className="box-form-input" placeholder="Nhập hạn sử dụng" format={dateFormat} />
+                      </Form.Item>
+                    </div>
+                  </div>
+                  <div className="row-box">
+                    <div className="column-box">
+                      <label className="box-form-label" style={{ fontSize: '13px' }}>Manufacturing date</label>
+                    </div>
+                    <div className="column-box">
+                      <Form.Item name="Manufacturingdate">
+                        <DatePicker className="box-form-input" placeholder="Nhập ngày sản xuất" format={dateFormat} />
+                      </Form.Item>
+                    </div>
+                  </div>
+                  <div className="row-box">
+                    <div className="column-box">
+                      <label className="box-form-label"  style={{ fontSize: '13px' }}>BBE/BE</label>
+                    </div>
+                    <div className="column-box">
+                      <Form.Item name="BBE">
+                        <DatePicker className="box-form-input" placeholder="Ngày sử dụng tốt nhất" format={dateFormat} />
+                      </Form.Item>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div className="form-group">
+                <div className="rectangle-divider">
+                  <h3 className="section-title">Product</h3>
+                </div>
+                <div className="form-group box-form-group">
+                  <div className="row-box">
+                    <div className="column-box">
+                      <label className="box-form-label"  style={{ fontSize: '13px' }}>Length x Width x Height(cm)</label>
+                    </div>
+                    <div className="column-box">
+                      <div className="input-row">
+                        <Form.Item name="boxLength_product">
+                          <InputNumber placeholder="Length" className="input-number-small" />
+                        </Form.Item>
+                        <Form.Item name="boxWidth_product">
+                          <InputNumber placeholder="Width" className="input-number-small" />
+                        </Form.Item>
+                        <Form.Item name="boxHeight_product">
+                          <InputNumber placeholder="Height" className="input-number-small" />
+                        </Form.Item>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="row-box">
+                    <div className="column-box">
+                      <label className="box-form-label" style={{ fontSize: '13px' }}>Weight(gram)</label>
+                    </div>
+                    <div className="column-box">
+                      <Form.Item name="boxWeight_product">
+                        <InputNumber placeholder="Enter product weight" className='input-number-weight' />
+                      </Form.Item>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div className="form-group">
+              <div className="rectangle-divider">
+                  <h3 className="section-title">Box</h3>
+                </div>
+                <div className="form-group box-form-group">
+                  <div className="row-box">
+                    <div className="column-box">
+                      <label className="box-form-label" style={{ fontSize: '13px' }}>Number of products/box</label>
+                    </div>
+                    <div className="column-box">
+                      <Form.Item name="boxQuantity_box">
+                        <InputNumber placeholder="Enter quantity" className='input-number-quantity' />
+                      </Form.Item>
+                    </div>
+                  </div>
+                  <div className="row-box">
+                    <div className="column-box">
+                      <label className="box-form-label" style={{ fontSize: '13px' }}>Length x Width x Height(cm)</label>
+                    </div>
+                    <div className="column-box">
+                      <div className="input-row">
+                        <Form.Item name="boxLength_product">
+                          <InputNumber placeholder="Length" className="input-number-small" />
+                        </Form.Item>
+                        <Form.Item name="boxWidth_product">
+                          <InputNumber placeholder="Width" className="input-number-small" />
+                        </Form.Item>
+                        <Form.Item name="boxHeight_product">
+                          <InputNumber placeholder="Height" className="input-number-small" />
+                        </Form.Item>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="row-box">
+                    <div className="column-box">
+                      <label className="box-form-label" style={{ fontSize: '13px' }}>Weight(gram)</label>
+                    </div>
+                    <div className="column-box">
+                      <Form.Item name="boxWeight_box">
+                        <InputNumber placeholder="Enter box height" className='input-number-weight' />
+                      </Form.Item>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              {/* Add more Form.Item components for other parameters */}
+            </Form>
+          </Collapse.Panel>
           <Collapse.Panel header={<span className="panel-header">Location</span>} key="2">
             {/* Add your Shelf details content here */}
             <Form layout="vertical">

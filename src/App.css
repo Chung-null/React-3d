@@ -87,9 +87,6 @@
   /* Kích thước chiều cao của button */
 }
 
-/* Add this CSS to your App.css or any other CSS file */
-
-/* Add this CSS to your App.css or any other CSS file */
 
 /* App.css */
 /* ... (existing styles) */
@@ -170,7 +167,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold ;
+  font-weight: bold;
 }
 
 /* App.css or any other CSS file */
@@ -188,7 +185,7 @@
 
 .location-container label {
   font-size: 80%;
-  font-weight: bold ;
+  font-weight: bold;
   white-space: normal;
   display: flex;
   align-items: center;
@@ -231,6 +228,77 @@
   margin-bottom: 20px;
 }
 
+/* Box */
+.row-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -2%;
+}
+
+.column-box {
+  flex: 1;
+  display: flex; 
+  align-items: center; 
+  
+}
+
+.box-form-label {
+  margin-right: 10px;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.box-form-input {
+  position: relative;
+  top: 15px; /* Điều chỉnh vị trí theo y (dọc) để căn giữa */
+}
+.input-number-small {
+  width: 80%;
+  position: relative;
+  top: 15px; /* Điều chỉnh vị trí theo y (dọc) để căn giữa */
+  font-size: 80%;
+}
+.input-number-quantity{
+  position: relative;
+  top: 15px; /* Điều chỉnh vị trí theo y (dọc) để căn giữa */
+}
+.input-number-weight{
+  position: relative;
+  top: 10px; /* Điều chỉnh vị trí theo y (dọc) để căn giữa */
+}
+.form-label{
+  font-weight: bold;
+  font-style: italic;
+}
+/* CSS cho lớp hình chữ nhật */
+.rectangle-divider {
+  margin-top: 2%;
+  margin-left: -2%;
+  width: 104%;
+  height: 30px; /* Điều chỉnh chiều cao của hình chữ nhật */
+  background-color: #252e45; /* Màu nền của hình chữ nhật */
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+/* CSS cho lớp của phần tiêu đề */
+.section-title {
+  font-size: 100%;
+  padding-left: 2%;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+
+
+
+
 /* Add media query for responsive layout */
 @media screen and (max-width: 768px) {
   .guide-panel {
@@ -265,6 +333,7 @@
     font-size: 80%;
     /* Make buttons take full width on smaller devices */
   }
+
   .ant-btn-edit {
     width: 50%;
     font-size: 80%;
@@ -278,7 +347,7 @@
 
   /* Adjust the width of image-collapse on smaller devices */
   .image-collapse {
-    width: 80%;
+    width: 100%;
   }
 
   /* Adjust the font size for the panel-header on smaller devices */
@@ -317,6 +386,8 @@
   .location-container label {
     font-size: 80%;
   }
+
 }
 
 /* Adjust the styling as needed */
+/* App.css */

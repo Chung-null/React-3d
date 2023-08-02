@@ -45,6 +45,7 @@ const BabylonScene = () => {
 
   const handleEditClick = () => {
     setShowImageButtons((prevShowImageButtons) => !prevShowImageButtons);
+    setShowGuide(true);
   };
   const handleSaveClick = () => {
     setShowResultNotification(true);
@@ -94,7 +95,7 @@ const BabylonScene = () => {
   };
 
   const guideContent = (
-    <div className="guide-content">
+    <div className="guide-content" id='guide-use'>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
         Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at
