@@ -83,8 +83,8 @@ const BabylonScene = () => {
         )}
         {resultMessage === '' && ( // Show buttons only if resultMessage is empty
           <div className="result-buttons">
-            <button onClick={handleSave}>Save</button>
-            <button onClick={handleSaveCancel}>Cancel</button>
+            <button id='save-data' onClick={handleSave}>Save</button>
+            <button id='cancel' onClick={handleSaveCancel}>Cancel</button>
           </div>
         )}
       </div>
@@ -116,7 +116,7 @@ const BabylonScene = () => {
       </Enginee>
       <div className="buttons-container">
         {showImageButtons ? (
-          <><Button className="ant-btn-save" type="primary" onClick={handleSaveClick} id='save-data'>
+          <><Button className="ant-btn-save" type="primary" onClick={handleSaveClick}>
             Save
           </Button>
             <Button className="ant-btn-back" type="primary" onClick={handleBackClick} id='back-data'>
